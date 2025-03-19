@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="header-title">Wanderlust Planner</h1>
+        <p class="header-slogan">"Explore the world's most beautiful places!"</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="destination-info">
+        <h2 id="destinationName"></h2>
+        <p id="destinationDescription">Loading details...</p>
+        <a href="destinations.html"><button>Back to Destinations</button></a>
+    </section>
+
+    <script>
+        // Fetch destination from URL
+        const params = new URLSearchParams(window.location.search);
+        const place = params.get("place");
+
+        // Sample details
+        const details = {
+            "Paris": "Paris, the city of love, is famous for the Eiffel Tower, museums, and vibrant culture.",
+            "Maldives": "The Maldives is a tropical paradise with crystal-clear waters, luxury resorts, and coral reefs.",
+            "Tokyo": "Tokyo is a futuristic city blending traditional temples with high-tech entertainment and food."
+        };
+
+        // Update content
+        if (place && details[place]) {
+            document.getElementById("destinationName").textContent = place;
+            document.getElementById("destinationDescription").textContent = details[place];
+        } else {
+            document.getElementById("destinationDescription").textContent = "Destination details not found.";
+        }
+    </script>
+
+</body>
+</html>

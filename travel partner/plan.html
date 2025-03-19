@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip - Wanderlust Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1 class="header-title">Wanderlust Planner</h1>
+        <p class="header-slogan">"Plan your perfect trip!"</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Itinerary Planner -->
+    <section class="planner">
+        <h2>Create Your Itinerary</h2>
+        <form id="itineraryForm">
+            <input type="text" placeholder="Destination" id="destination">
+            <input type="date" id="date">
+            <textarea placeholder="Activities" id="activities"></textarea>
+            <button type="submit">Save Itinerary</button>
+        </form>
+        <div id="itineraryList"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Wanderlust Planner | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById("itineraryForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let destination = document.getElementById("destination").value;
+            let date = document.getElementById("date").value;
+            let activities = document.getElementById("activities").value;
+
+            if (destination && date && activities) {
+                let itinerary = `<p><strong>${destination}</strong> - ${date} <br> Activities: ${activities}</p>`;
+                document.getElementById("itineraryList").innerHTML += itinerary;
+                this.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

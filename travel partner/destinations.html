@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="header-title">Wanderlust Planner</h1>
+        <p class="header-slogan">"Explore the world's most beautiful places!"</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sorting Section -->
+    <div class="sort-container">
+        <label for="sortOptions">Sort by:</label>
+        <select id="sortOptions">
+            <option value="name">Name (A-Z)</option>
+            <option value="popularity">Popularity</option>
+        </select>
+    </div>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="container" id="destinationContainer">
+            <!-- Destination Cards Will Be Dynamically Inserted Here -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageNumber">1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popupImage" src="" alt="Popup Image">
+            <h3 id="popupTitle"></h3>
+            <p id="popupDescription"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Wanderlust Planner | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
